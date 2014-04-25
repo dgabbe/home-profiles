@@ -10,7 +10,7 @@ alias sourcetree='open -a /Applications/SourceTree.app'
 #
 alias ack='ack --ignore-dir=coverage'
 alias dss='diff --side-by-side'
-alias git-update='git fetch --tags; git fetch origin; for i in train rc master; do git co $i; git pull origin $i; done'
+alias git-update='git fetch --tags; git fetch origin; for i in rc master; do git co $i; git pull origin $i; done'
 alias knife-ssh='knife ssh '\''role:rails3 AND chef_environment:production AND NOT role:maintenance'\'' -a name -c config/chef/knife-prod.rb'
 alias mac2unix='perl -pe '\''s/\r/\n/mg'\'''
 alias marked='open -a /Applications/Marked.app'
