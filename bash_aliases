@@ -5,6 +5,7 @@
 alias aquamacs='open -a /Applications/Aquamacs.app'
 alias excel='open -a /Applications/Microsoft\ Office\ 2011/Microsoft\ Excel.app '
 alias sourcetree='open -a /Applications/SourceTree.app'
+alias sublime='open -a /Applications/Sublime\ Text.app'
 
 # These should work with any *nix
 #
