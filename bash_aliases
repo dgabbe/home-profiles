@@ -9,6 +9,7 @@ do
 done
 
 # These should work with any *nix. Uncomment the ones you want
+alias chex='chmod -vv u+x '
 alias dss='diff --side-by-side'
 #alias path='ruby -e "puts ENV[\"PATH\"].gsub(/:/, \"\n\")"'
 #alias pretty_json='ruby -r json -e '\''txt = File.read(ARGV[0]); h = JSON.parse(txt); puts JSON.pretty_generate(h)'\'''

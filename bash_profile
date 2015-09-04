@@ -1,4 +1,4 @@
-#-*-shell-script-*-
+#!/usr/bin/env bash
 
 # .bash_profile is for making sure that both the things in .profile and .bashrc are loaded
 # for login shells.
