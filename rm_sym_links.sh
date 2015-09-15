@@ -15,15 +15,7 @@ do
 	f=$HOME/.${s}
 	if [[ -L ${f} ]]
 	then
-		printf "\n    ${f} is a sym link. No change to make.\n"
-		continue
+		rm -v ${f}
 	fi
-	
-	if [[ -f ${f} ]]
-	then
-		mv -v ${f} ${f}.org
-	fi
-
-	ln -vs ${sdir}/${s}  ${f}
 done
 
