@@ -33,7 +33,7 @@
 	<key>CursorType</key>
 	<integer>2</integer>
 	<key>Default Bookmark Guid</key>
-	<string>62CFB5EB-120F-4CFC-8291-906D70B0F0BD</string>
+	<string>7E6C75DD-23D9-44D3-8BD5-9E9178841ABB</string>
 	<key>DefaultFolderX:NSSavePanel:origin.x</key>
 	<real>220</real>
 	<key>DefaultFolderX:NSSavePanel:origin.y</key>
@@ -516,7 +516,7 @@
 	<key>EnableGrowl</key>
 	<false/>
 	<key>EnableRendezvous</key>
-	<true/>
+	<false/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>FsTabDelay</key>
@@ -1341,6 +1341,18 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>No</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>No</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1513,8 +1525,8 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
-			<key>Bonjour Service Address</key>
-			<string>192.168.0.10</string>
+			<key>Bound Hosts</key>
+			<array/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -1522,15 +1534,34 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>telnet 192.168.0.10</string>
+			<string>login -fp dgabbe</string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.64011132717132568</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.64010047912597656</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.64011967182159424</real>
+			</dict>
+			<key>Cursor Guide Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.17647058823529413</real>
+				<key>Blue Component</key>
+				<real>0.99888306856155396</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
+				<key>Green Component</key>
+				<real>0.50000935792922974</real>
+				<key>Red Component</key>
+				<real>0.63861298561096191</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -1548,7 +1579,7 @@
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
-			<string>LFR-P2055</string>
+			<string>login -fp dgabbe</string>
 			<key>Disable Bold</key>
 			<integer>0</integer>
 			<key>Disable Window Resizing</key>
@@ -1565,7 +1596,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Guid</key>
-			<string>F10B0433-7C76-477F-AE07-7D2C32C5EDE4</string>
+			<string>7E6C75DD-23D9-44D3-8BD5-9E9178841ABB</string>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -1635,7 +1666,7 @@
 			<key>Mouse Reporting</key>
 			<integer>1</integer>
 			<key>Name</key>
-			<string>LFR-P2055</string>
+			<string>dgabbe</string>
 			<key>Non Ascii Double Width</key>
 			<true/>
 			<key>Non Ascii Font</key>
@@ -1670,28 +1701,32 @@
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
+			<key>Shortcut</key>
+			<string></string>
 			<key>Silence Bell</key>
+			<false/>
+			<key>Smart Cursor Color</key>
 			<false/>
 			<key>Sync Title</key>
 			<integer>0</integer>
 			<key>Tags</key>
-			<array>
-				<string>bonjour</string>
-			</array>
+			<array/>
 			<key>Terminal Profile</key>
 			<string>Default</string>
 			<key>Terminal Type</key>
-			<string>xterm</string>
+			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Use Bold Font</key>
 			<integer>1</integer>
+			<key>Use Cursor Guide</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
 			<integer>1</integer>
 			<key>Working Directory</key>
-			<string></string>
+			<string>/Users/dgabbe</string>
 		</dict>
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
