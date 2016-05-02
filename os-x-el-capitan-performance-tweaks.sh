@@ -1,6 +1,16 @@
 #! /usr/bin/env bash
 
+#
+# Review the features above the ================ before you execute this file
+#
+
+# Enable AirDrop feature for ethernet connected Macs
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+# =====================================================================
+
 # Source: http://www.defaults-write.com/10-terminal-commands-to-speed-up-your-mac-in-os-x-el-capitan/
+# Source: https://gist.github.com/benfrain/7434600
 
 # Disable animations when opening and closing windows.
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
@@ -32,3 +42,18 @@ defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
 
 # The keyboard react faster to keystrokes (not equally useful for everyone)
 defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Show file path in title of finder window
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+
+# Disable smooth scrolling for paging (space bar)
+defaults write -g NSScrollAnimationEnabled -bool NO
+
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Don’t show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true
