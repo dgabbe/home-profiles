@@ -134,3 +134,6 @@ if [ -s "$HOME/.rvm/scripts/rvm" ]; then
 		ps1_set --prompt \$
 	fi
 fi
+
+# opt out Homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
