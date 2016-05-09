@@ -3,4 +3,4 @@
 #
 # Setting CDPATH for systems w/multiple partitions or disks is handy
 #
-export CDPATH=:/Volumes/Mini-HD2/Users2/dgabbe/_git:/Volumes/Mini-HD2/Users2/dgabbe/_R-programing
+export CDPATH=:/Volumes/Mini-HD2/Users2/dgabbe/_git:/Volumes/Mini-HD2/Users2/dgabbe/R
