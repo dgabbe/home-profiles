@@ -8,6 +8,11 @@ do
 	if [[ -e "/Applications/${a}.app" ]]; then alias ${al}="open -a /Applications/${a}.app"; fi
 done
 
+#
+# Bit of a hack because CDPATH is not working w/command completion.
+#
+alias cdgit='cd $dggit'
+
 # These should work with any *nix. Uncomment the ones you want
 alias chex='chmod -vv u+x '
 alias dss='diff --side-by-side'
