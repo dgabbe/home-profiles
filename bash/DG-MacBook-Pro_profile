@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+#
+# Setting CDPATH for systems w/multiple partitions or disks is handy
+#
+export CDPATH=:~/dgabbe/_git:~/dgabbe/_git/R
+
+export dggit=~/_git
