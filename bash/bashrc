@@ -79,7 +79,7 @@ esac
 #     alias ls='ls --color=auto'
 #     #alias dir='dir --color=auto'
 #     #alias vdir='vdir --color=auto'
-# 
+#
 #     alias grep='grep --color=auto'
 #     alias fgrep='fgrep --color=auto'
 #     alias egrep='egrep --color=auto'
@@ -97,10 +97,16 @@ alias fgrepi='fgrep --color=auto -i'
 #  d: Directories are listed as plain files (not searched recursively)
 #  e: Print the Access Control List (ACL) associated with the file
 #  G: Enable colorized output
+#  h: use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte
 #
-alias ll='ls -alFeG'
+alias ll='ls -alFeGh'
 alias la='ls -A'
 alias l='ls -CF'
+
+# May be OS X specific
+# List the extended file attributes
+#
+alias lx='xattr -lv'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
