@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
+
+#
 # Mac OSX specific
 # Written to be Bash 3.x compatible
-mac_apps=("Aquamacs" "BBedit" "RStudio" "SourceTree")
+#
+mac_apps=("Aquamacs" "BBedit" "RStudio" "SourceTree" "Rodeo")
 for a in "${mac_apps[@]}"
 do
 	al=$(echo "$a" | tr [:upper:] [:lower:])
 	if [[ -e "/Applications/${a}.app" ]]; then alias ${al}="open -a /Applications/${a}.app"; fi
 done
 
-#
-# Bit of a hack because CDPATH is not working w/command completion.
-#
-alias cdgit='cd $dggit'
+# Dgabbe centric
+alias cdgit='cd _git' # main git directory for my projects
 
 # These should work with any *nix. Uncomment the ones you want
 alias chex='chmod -vv u+x '
