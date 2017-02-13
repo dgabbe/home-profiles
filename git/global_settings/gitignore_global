@@ -1,0 +1,22 @@
+*~
+.DS_Store
+
+#
+# R/RStudio files
+#
+*.Rproj
+.Rhistory
+rsconnect/*
+.Rproj.user
+
+#
+# BBedit files
+#
+*.bbprojectd
+
+#
+# Temp files
+#
+~$*
+ODSC_package_post.html
+_untracked
