@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+
+#
 # Mac OSX specific
 # Written to be Bash 3.x compatible
+#
 mac_apps=("Aquamacs" "BBedit" "RStudio" "SourceTree")
 for a in "${mac_apps[@]}"
 do
