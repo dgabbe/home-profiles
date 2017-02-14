@@ -6,7 +6,8 @@
 [ -z "$PS1" ] && return
 
 set -o emacs
-set -o nounset
+# set -o nounset # bash-completion has a bug - https://github.com/scop/bash-completion/issues/44
+set +o nounset
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
