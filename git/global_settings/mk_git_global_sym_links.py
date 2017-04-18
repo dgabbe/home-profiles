@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 
 # Set up git global config files in your home directory
 #
@@ -18,7 +18,7 @@ import sys
 home = os.environ["HOME"]
 repo = os.path.dirname(os.path.abspath(sys.argv[0])) # Very simple, may need to revisit
 
-scripts = ["gitconfig", "gitignore_global"]
+scripts = ["gitconfig", "gitignore_global", ".stCommitMsg"]
 
 for s in scripts:
 	f = os.path.join(home, "." + s)
