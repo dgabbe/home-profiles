@@ -21,7 +21,7 @@ repo = os.path.dirname(os.path.abspath(sys.argv[0])) # Very simple, may need to 
 scripts = ["bash_aliases", "bash_logout", "bash_profile", "bashrc", "profile"]
 
 # Append machine specific file if found
-my_machine = string.split(platform.uname()[1], ".local")[0] + "_profile"
+my_machine = string.split(platform.uname()[1], ".local")[0] + "_profile_${USER}"
 if os.path.exists(my_machine):
 	scripts.append(my_machine)
 

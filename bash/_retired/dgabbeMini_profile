@@ -5,8 +5,3 @@
 # Reminder: Set path to be parent of the directory you want
 #
 export CDPATH=:/Volumes/Mini-HD2/Users2/dgabbe/:/Volumes/Mini-HD2/Users2/dgabbe/_git/
-
-#
-# Temp solution no longer needed
-#
-# export dggit=/Volumes/Mini-HD2/Users2/dgabbe/_git

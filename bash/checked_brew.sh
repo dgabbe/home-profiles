@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 
+set -o nounset # deal w/bash-completion bug
+trap "set +o nounset" SIGINT SIGTERM EXIT RETURN
+
 #
 # Prevent various file protection problems and other stupidities.
 #
@@ -14,10 +17,10 @@
 #
 
 # fiddling around for brew function.
-# figure out local nounset!
-## figure out local variable declarations - functions only!
-# move aliases from bashrc to bash_aliases!  Check in MacMini changes first!!
-# verify extglob is on
+# move aliases from bashrc to bash_aliases!
+
+# Remember to move elsewhere like under Groups
+export HOMEBREW_CACHE=/Volumes/Mini-HD2/Users2/gadmin/Homebrew/Caches/
 
 error_prefix="  ${0##*/} error: "
 admin_group='admin'
@@ -29,7 +32,7 @@ if [[ $(shopt extglob) == 'extglob on' ]]; then
   exit 1
 fi
 
-if [[ "$*" =~ ${read_commands_regex} || $# -eq 0 ]]; then
+if [[ ! "$*" =~ ${read_commands_regex} || $# -eq 0 ]]; then
   command brew $*
   exit $?
 fi
@@ -39,7 +42,6 @@ fi
 #
 groups=$(dscl . read /Groups/${admin_group} GroupMembership)
 if ! [[ ${groups} =~ \<${USER}\> ]]; then
-  echo "  matched \"$BASH_REMATCH\" found in \"$USER\"" # debug
   echo "$error_prefix $USER is not an admin"
   exit 1
 fi
@@ -54,4 +56,4 @@ fi
 #
 command brew $*
 
-# alias brew=checked_brew() # add to system specific file(s) or bash alias files?
+trap - SIGINT SIGTERM EXIT RETURN
