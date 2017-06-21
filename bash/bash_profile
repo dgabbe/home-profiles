@@ -13,6 +13,7 @@ then
     source ~/.bashrc
 fi
 
+# move this to the place where the path is set!
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi

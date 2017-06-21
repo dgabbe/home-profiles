@@ -11,7 +11,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # Set machine specific environment variables and aliases if present. Useful for CDPATH
-my_machine=$HOME/.${HOSTNAME%.local}_profile
+my_machine=$HOME/.${HOSTNAME%.local}_${USER}_profile
 if [ -e "${my_machine}" ]; then
 	source ${my_machine}
 fi

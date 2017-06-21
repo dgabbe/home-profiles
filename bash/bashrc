@@ -8,6 +8,7 @@
 set -o emacs
 # set -o nounset # bash-completion has a bug - https://github.com/scop/bash-completion/issues/44
 set +o nounset
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -27,22 +28,25 @@ HISTFILESIZE=2000
 
 # set variable identifying the chroot you work in (used in the prompt below)
 debian_chroot=""
-if [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+# if [ -r /etc/debian_chroot ]; then
+#     debian_chroot=$(cat /etc/debian_chroot)
+# fi
 
-color_prompt=""
+#
 # set a fancy prompt (non-color, unless we know we "want" color)
 # OS X reports 'xterm'
+#
+color_prompt=""
 case "$TERM" in
     xterm-*color | xterm) 	color_prompt=yes;;
 esac
 
+#
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
+#
 #force_color_prompt=yes
-
 # if [ -n "$force_color_prompt" ]; then
 #     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 # 	# We have color support; assume it's compliant with Ecma-48
