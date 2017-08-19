@@ -9,6 +9,9 @@
 rsconnect/*
 .Rproj.user
 
+# Temp diff files
+**/*R.orig
+
 #
 # BBedit files
 #
@@ -18,4 +21,4 @@ rsconnect/*
 # Temp files
 #
 ~$*
-_untracked
+_untracked/
