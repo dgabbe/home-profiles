@@ -18,7 +18,7 @@ done
 #
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias chex='chmod -vv u+x '
-alias chp chmod -go:rwx   # Set files access to only owner
+alias chp='chmod -go:rwx'   # Set files access to only owner
 alias dss='diff --side-by-side'
 alias fgrepi='fgrep --color=auto -i'
 alias grepi='grep --color=auto -i'
@@ -37,13 +37,13 @@ alias grepi='grep --color=auto -i'
 #  O: File flags
 #
 alias l='ls -CF'
-alias ld ls -d           # treat directory as a file
+alias ld='ls -d'         # treat directory as a file
 alias la='ls -A'
 alias lf='ls -lOde'      # list permissions, flags, acls, extended attributes
 alias ll='ls -alFeGhO'
 alias lx='xattr -lv'     # List the extended file attributes
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
-alias tagbrew: tag --add brew-installed /Applications/
+alias tagbrew='tag --add brew-installed /Applications/'
 #alias path='ruby -e "puts ENV[\"PATH\"].gsub(/:/, \"\n\")"'
 #alias pretty_json='ruby -r json -e '\''txt = File.read(ARGV[0]); h = JSON.parse(txt); puts JSON.pretty_generate(h)'\'''
 #alias tabify='ruby -pe '\''gsub(/ +/, "\t")'\'''
