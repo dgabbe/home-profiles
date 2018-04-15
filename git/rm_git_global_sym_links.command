@@ -1,12 +1,13 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 
-# Set up your account to have the various bash config files point to your local git repo.
+#
+# Set up git config files in your home directory
 #
 # Assume script is run from git local working directory.
 #
-# Repo file names are with the leading "."
+# Repo file names are without the leading "."
 #
-# Assume if a link is found, the environment is already setup, but not 
+# Assume if a link is found, the environment is already setup, but not
 # necessarily by this repo.
 #
 
@@ -18,7 +19,7 @@ import sys
 home = os.environ["HOME"]
 repo = os.path.dirname(os.path.abspath(sys.argv[0])) # Very simple, may need to revisit
 
-scripts = ["bash_aliases", "bash_logout", "bash_profile", "bashrc", "profile"]
+scripts = ["gitconfig", "gitignore_global", "stCommitMsg"]
 
 # Append machine specific file if found
 my_machine = string.split(platform.uname()[1], ".local")[0] + "_profile"
@@ -26,7 +27,7 @@ if os.path.exists(my_machine):
 	scripts.append(my_machine)
 
 for s in scripts:
-	f = os.path.join(home, "." + s)	
+	f = os.path.join(home, "." + s)
 	if os.path.islink(f):
 		os.remove(f)
 		print "\n    ", f, " removed."

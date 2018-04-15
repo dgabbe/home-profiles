@@ -1,0 +1,30 @@
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+
+[alias]
+	st = status
+	lo = log --decorate --stat
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[user]
+#	email = bosco@sfruby.info
+#	name = Bosco So
+
+[apply]
+	whitespace = nowarn
+[core]
+	excludesfile = /Users/bosco/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

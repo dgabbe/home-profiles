@@ -1,4 +1,4 @@
-This folder is for the global git config files:
+This folder is for the git config files:
 *  ~/.gitconfig
 *  ~/.gitignore_global
 

@@ -61,12 +61,12 @@ export HISTFILESIZE=2000
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+if [ -f ${HOME}/.bash_aliases ]; then
+    source ${HOME}/.bash_aliases
 fi
 
-if [ -f ~/.git_completion ]; then
-    source ~/.git_completion
+if [ -f ${HOME}/.git_completion ]; then
+    source ${HOME}/.git_completion
 fi
 
 #
@@ -92,7 +92,7 @@ if [ -s "${HOME}/.rvm/scripts/rvm" ]; then
   # load git prompt
   if [[ $- == *i* ]]
   then
-    . ~/.rvm/contrib/ps1_functions
+    . ${HOME}/.rvm/contrib/ps1_functions
     ps1_set --prompt \$
   fi
 fi

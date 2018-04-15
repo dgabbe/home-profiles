@@ -1,0 +1,50 @@
+#
+# References:
+#   OS files: https://gist.github.com/octocat/9257657
+#   R files: https://github.com/github/gitignore/blob/master/R.gitignore
+#
+
+#
+# OS X / macOS files
+#
+._*
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db*~
+
+#
+# R/RStudio files
+#
+.httr-oauth
+.Rapp.history
+.RData
+.Rhistory
+.Rproj.user
+.Ruserdata
+*-Ex.R
+*.knit.md
+*.orig
+*.Rproj
+*.utf8.md
+/*_cache/
+/*.Rcheck/
+/*.tar.gz
+/cache/
+rsconnect/*
+vignettes/*.html
+vignettes/*.pdf
+
+
+#
+# BBedit files
+#
+*.bbprojectd
+
+#
+# Temp files
+#
+~$*
+_untracked/

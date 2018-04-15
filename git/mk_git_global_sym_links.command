@@ -1,10 +1,11 @@
 #! /usr/bin/env python
 
-# Set up git global config files in your home directory
+#
+# Set up git config files in your home directory
 #
 # Assume script is run from git local working directory.
 #
-# Repo file names are with the leading "."
+# Repo file names are without the leading "."
 #
 # Assume if a link is found, the environment is already setup, but not
 # necessarily by this repo.
@@ -18,7 +19,7 @@ import sys
 home = os.environ["HOME"]
 repo = os.path.dirname(os.path.abspath(sys.argv[0])) # Very simple, may need to revisit
 
-scripts = ["gitconfig", "gitignore_global", ".stCommitMsg"]
+scripts = ["gitconfig", "gitignore_global", "stCommitMsg"]
 
 for s in scripts:
 	f = os.path.join(home, "." + s)
