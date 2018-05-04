@@ -6,3 +6,4 @@
 #
 export CDPATH=:/Volumes/Mini-HD2/Users2/dgabbe/:/Volumes/Mini-HD2/Users2/dgabbe/_git/
 export HOMEBREW_CACHE=/Volumes/Mini-HD2/Groups/Homebrew/Caches/
+export PYTHONPATH=/Volumes/Mini-HD2/Users2/dgabbe/_git/_python/

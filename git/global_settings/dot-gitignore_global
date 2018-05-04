@@ -1,8 +1,23 @@
 #
+# BBedit files
+#
+*.bbprojectd
+
+#
 # OS X/MacOS files
 #
 *~
 .DS_Store
+
+#
+# PyCharm
+#
+.idea/
+
+#
+# Python
+#
+__pycache__/
 
 #
 # R/RStudio files
@@ -14,13 +29,10 @@
 .Ruserdata
 rsconnect/*
 
+#
 # Temp diff files
+#
 **/*R.orig
-
-#
-# BBedit files
-#
-*.bbprojectd
 
 #
 # Temp files
