@@ -17,7 +17,7 @@ import string
 import sys
 
 home = os.environ["HOME"]
-repo = os.path.dirname(os.path.abspath(sys.argv[0])) # Very simple, may need to revisit
+repo = os.path.dirname(os.path.abspath(__file__))
 
 scripts = ["gitconfig", "gitignore_global", "stCommitMsg"]
 
@@ -29,7 +29,7 @@ for s in scripts:
 		print "\n    Moved ", f, "to ", f, ".org"
 
 	if os.path.islink(f):
-		print"\n    ", f, "is a sym link. No changes to make."
+		print "\n    ", f, "is a sym link. No changes to make."
 	else:
 		os.symlink(os.path.join(repo, s), f)
 		print "\n    ", f, " -> ", os.path.realpath(f)

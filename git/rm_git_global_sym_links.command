@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 #
-# Set up git config files in your home directory
+# Remove git config files in your home directory
 #
 # Assume script is run from git local working directory.
 #

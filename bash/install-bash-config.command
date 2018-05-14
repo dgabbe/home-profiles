@@ -17,7 +17,7 @@ import string
 import sys
 
 home = os.environ["HOME"]
-repo = os.path.dirname(os.path.abspath(sys.argv[0])) # Very simple, may need to revisit
+repo = os.path.dirname(os.path.abspath(__file__))
 
 scripts = [
   [".bash_aliases", "dot-bash_aliases"],
