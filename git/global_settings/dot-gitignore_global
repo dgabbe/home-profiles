@@ -1,0 +1,41 @@
+#
+# BBedit files
+#
+*.bbprojectd
+
+#
+# OS X/MacOS files
+#
+*~
+.DS_Store
+
+#
+# PyCharm
+#
+.idea/
+
+#
+# Python
+#
+__pycache__/
+
+#
+# R/RStudio files
+#
+.RData
+.Rhistory
+.Rproj
+.Rproj.user
+.Ruserdata
+rsconnect/*
+
+#
+# Temp diff files
+#
+**/*R.orig
+
+#
+# Temp files
+#
+~$*
+_untracked/

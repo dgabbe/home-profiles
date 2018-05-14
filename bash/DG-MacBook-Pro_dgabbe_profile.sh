@@ -6,4 +6,4 @@
 #
 export CDPATH=:${HOME}:${HOME}/_git/
 export HOMEBREW_CACHE=/Groups/Homebrew/Caches/
-
+export PYTHONPATH=${HOME}/_git/_python/

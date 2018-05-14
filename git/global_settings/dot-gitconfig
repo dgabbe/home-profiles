@@ -1,0 +1,27 @@
+[user]
+  name = David G.
+  email = dgabbe@acm.org
+[credential]
+  helper = osxkeychain
+[core]
+  excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+  cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+  trustExitCode = true
+[commit]
+  template = ~/.stCommitMsg
+[color]
+  ui = auto
+[merge]
+  conflictstyle = diff3
+  tool = diffmerge
+[diff]
+  tool = diffmerge
+[difftool "diffmerge"]
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+  trustExitCode = true
