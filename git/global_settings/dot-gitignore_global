@@ -6,8 +6,15 @@
 #
 # OS X/MacOS files
 #
-*~
+._*
 .DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+*~
+ehthumbs.db
+Thumbs.db*~
+
 
 #
 # PyCharm
@@ -22,12 +29,26 @@ __pycache__/
 #
 # R/RStudio files
 #
+.httr-oauth
+.Rapp.history
 .RData
 .Rhistory
 .Rproj
 .Rproj.user
 .Ruserdata
+*-Ex.R
+*.knit.md
+*.orig
+*.Rproj
+*.utf8.md
+/*_cache/
+/*.Rcheck/
+/*.tar.gz
+/cache/
 rsconnect/*
+vignettes/*.html
+vignettes/*.pdf
+
 
 #
 # Temp diff files
