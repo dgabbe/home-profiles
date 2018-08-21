@@ -1,8 +1,14 @@
 #
 # References:
 #   OS files: https://gist.github.com/octocat/9257657
+#   Python files: https://github.com/github/gitignore/blob/master/python.gitignore
 #   R files: https://github.com/github/gitignore/blob/master/R.gitignore
 #
+
+#
+# BBedit files
+#
+*.bbprojectd
 
 #
 # OS X / macOS files
@@ -37,11 +43,6 @@ rsconnect/*
 vignettes/*.html
 vignettes/*.pdf
 
-
-#
-# BBedit files
-#
-*.bbprojectd
 
 #
 # Temp files
