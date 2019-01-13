@@ -44,7 +44,7 @@ alias lf='ls -lOde'      # list permissions, flags, acls, extended attributes
 alias ll='ls -alFeGhO'
 alias lx='xattr -lv'     # List the extended file attributes
 alias mkdirp='mkdir -m -go:rex' # The Apple way of keeping things private
-alias noqar='xattr -rd com.apple.quaratine'  # Get applications out of Apple's quaratine
+alias noqar='xattr -rd com.apple.quarantine'  # Get applications out of Apple's quarantine
 alias tagbrew='tag --add brew-installed /Applications/'
 
 #
