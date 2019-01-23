@@ -11,6 +11,7 @@
 # necessarily by this repo.
 #
 
+from __future__ import print_function
 import os
 import platform
 import string
@@ -22,15 +23,14 @@ repo = os.path.dirname(os.path.abspath(__file__))
 scripts = ["gitconfig", "gitignore_global", "stCommitMsg"]
 
 for s in scripts:
-	f = os.path.join(home, "." + s)
+    f = os.path.join(home, "." + s)
 
-	if os.path.isfile(f) and not os.path.islink(f):
-		os.rename(f, f + ".org")
-		print "\n    Moved ", f, "to ", f, ".org"
+    if os.path.isfile(f) and not os.path.islink(f):
+        os.rename(f, f + ".org")
+        print("\n    Moved {} to {}.org".format(f, f))
 
-	if os.path.islink(f):
-		print "\n    ", f, "is a sym link. No changes to make."
-	else:
-		os.symlink(os.path.join(repo, s), f)
-		print "\n    ", f, " -> ", os.path.realpath(f)
-
+    if os.path.islink(f):
+        print("\n    {} is a sym link. No changes to make.".format(f))
+    else:
+        os.symlink(os.path.join(repo, s), f)
+        print("\n    {} -> {}".format(f, os.path.realpath(f)))
