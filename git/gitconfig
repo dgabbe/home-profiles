@@ -1,10 +1,10 @@
 [user]
-  name = David G.
-  email = dgabbe@acm.org
+	name = David G.
+	email = dgabbe@acm.org
 [credential]
   helper = osxkeychain
 [core]
-  excludesfile = $HOME/.gitignore_global
+	excludesfile = /Users/dgabbe/.gitignore_global
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
 	path = -ro
@@ -12,7 +12,7 @@
 	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
 [commit]
-  template = $HOME/.stCommitMsg
+	template = $HOME/.stCommitMsg
 [color]
   ui = auto
 [merge]

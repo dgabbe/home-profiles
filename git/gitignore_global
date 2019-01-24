@@ -1,9 +1,24 @@
 #
+# Tips:
+#   * Patterns: https://git-scm.com/docs/gitignore#_pattern_format
+#   * git check-ignore -v <pathname> to check rules.  See https://git-scm.com/docs/git-check-ignore.
+#   * https://stackoverflow.com/questions/8783093
+#
 # References:
 #   OS files: https://gist.github.com/octocat/9257657
+#   Code Igniter: https://github.com/github/gitignore/blob/master/CodeIgniter.gitignore
+#   JetBrains: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
 #   Python files: https://github.com/github/gitignore/blob/master/python.gitignore
 #   R files: https://github.com/github/gitignore/blob/master/R.gitignore
 #
+
+#
+# Personal conventions
+#
+*.org
+/**/_untracked/
+l.t
+t.t
 
 #
 # BBedit files
@@ -11,15 +26,36 @@
 *.bbprojectd
 
 #
-# OS X / macOS files
+# macOS / OS X files
 #
 ._*
 .DS_Store
-.DS_Store?
 .Spotlight-V100
 .Trashes
-ehthumbs.db
-Thumbs.db*~
+*.dmg
+*~ # typically Emacs autosave
+
+#
+# Microsoft Office
+#
+~$*.doc*
+~$*.xls*
+
+#
+# PyCharm
+#
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+#
+# Python
+#
+__pycache__
+venv
 
 #
 # R/RStudio files
@@ -32,7 +68,6 @@ Thumbs.db*~
 .Ruserdata
 *-Ex.R
 *.knit.md
-*.orig
 *.Rproj
 *.utf8.md
 /*_cache/
@@ -43,9 +78,13 @@ rsconnect/*
 vignettes/*.html
 vignettes/*.pdf
 
-
 #
 # Temp files
 #
-~$*
-_untracked/
+*.orig
+
+#
+# Windows OS
+#
+ehthumbs.db
+Thumbs.db
