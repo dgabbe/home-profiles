@@ -3,6 +3,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+#
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -14,8 +15,9 @@ if [ -d "${HOME}/bin" ] ; then
     PATH="${HOME}/bin:$PATH"
 fi
 
+
 #
-# Set machine specific environment variables and aliases if present. Useful for CDPATH
+# Set CDPATH & machine specific environment variables and aliases if present.
 #
 my_machine=${HOME}/.${HOSTNAME%.local}_${USER}_profile
 if [ -e "${my_machine}" ]; then
@@ -40,15 +42,15 @@ export LC_COLLATE='en_US.UTF-8'
 # Set options using set or shopt or export
 #
 set -o emacs
-#
+
 # bash-completion bug - https://github.com/scop/bash-completion/issues/44
-#
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   set +o nounset
   source $(brew --prefix)/etc/bash_completion
 else
   set -o nounset
 fi
+
 shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
 export GIT_PS1_SHOWDIRTYSTATE=1
 shopt -s histappend # Append to the history file, don't overwrite it
@@ -56,10 +58,12 @@ export HISTCONTROL='ignoredups:ignorespace' # don't put duplicate lines in the h
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 
+#
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+#
 
 if [ -f ${HOME}/.bash_aliases ]; then
     source ${HOME}/.bash_aliases

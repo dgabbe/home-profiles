@@ -23,4 +23,4 @@ for s in scripts:
   f = os.path.join(home, "." + s)
   if os.path.islink(f):
     os.remove(f)
-    print("\n    {} removed.".format(f)
+    print("\n    {} removed.".format(f))
