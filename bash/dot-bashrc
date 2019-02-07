@@ -83,7 +83,7 @@ case "$TERM" in
     PS2='\[\033[00;34m\]> '
     ;;
   *)
-    PS1='\[\e]0;\u@\h: \w\a\]$SHLVL:\! \u@\h:\w$(__git_ps1 "(%s)")\$\n\r'
+    PS1='\[\e]0;\u@\h: \w\a\]$SHLVL:\! \u@\h:\w$(__git_ps1 "(%s)")\$\n'
     ;;
 esac
 
