@@ -25,7 +25,8 @@ scripts = [
     [".bash_profile", "dot-bash_profile"],
     [".bashrc", "dot-bashrc"],
     [".git-completion", "git-completion.bash"],
-    [".profile", "dot-profile"]
+    [".profile", "dot-profile"],
+    [".set-ps1", "set-ps1.sh"]
 ]
 
 # Append machine-user specific file if found

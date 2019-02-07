@@ -12,9 +12,8 @@
 # set PATH so it includes user's private bin if it exists
 #
 if [ -d "${HOME}/bin" ] ; then
-    PATH="${HOME}/bin:$PATH"
+    PATH="${HOME}/bin:${PATH}"
 fi
-
 
 #
 # Set CDPATH & machine specific environment variables and aliases if present.
@@ -74,24 +73,18 @@ if [ -f ${HOME}/.git_completion ]; then
 fi
 
 #
-# set a color prompt, git branch, & window title
-# OS X reports 'xterm-256color'
+# Set prompt, window title, git status
 #
-case "$TERM" in
-  xterm-*color | xterm | rxvt*)
-    PS1='\[\e]0;\u@\h: \w\a\]$SHLVL: \[\033[00;34m\]\u\[\033[00m\]@\[\033[00;34m\]\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 "(%s)")\$\n\r'
-    PS2='\[\033[00;34m\]> '
-    ;;
-  *)
-    PS1='\[\e]0;\u@\h: \w\a\]$SHLVL:\! \u@\h:\w$(__git_ps1 "(%s)")\$\n\r'
-    ;;
-esac
+if [ -f ${HOME}/.set-ps1 ]; then
+    source ${HOME}/.set-ps1
+fi
+
 
 #
 # load rvm
 #
 if [ -s "${HOME}/.rvm/scripts/rvm" ]; then
-  PATH=$PATH:${HOME}/.rvm/bin # Add RVM to PATH for scripting
+  PATH=${PATH}:${HOME}/.rvm/bin # Add RVM to PATH for scripting
   source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
   # load git prompt
   if [[ $- == *i* ]]
