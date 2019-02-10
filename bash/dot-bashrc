@@ -51,7 +51,6 @@ else
 fi
 
 shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
-export GIT_PS1_SHOWDIRTYSTATE=1
 shopt -s histappend # Append to the history file, don't overwrite it
 export HISTCONTROL='ignoredups:ignorespace' # don't put duplicate lines in the history.
 export HISTSIZE=1000
@@ -68,17 +67,12 @@ if [ -f ${HOME}/.bash_aliases ]; then
     source ${HOME}/.bash_aliases
 fi
 
-if [ -f ${HOME}/.git_completion ]; then
-    source ${HOME}/.git_completion
-fi
-
 #
 # Set prompt, window title, git status
 #
 if [ -f ${HOME}/.set-ps1 ]; then
     source ${HOME}/.set-ps1
 fi
-
 
 #
 # load rvm

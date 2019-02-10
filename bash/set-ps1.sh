@@ -23,6 +23,12 @@
 #   - https://invisible-island.net/ncurses/ncurses.faq.html#xterm_256color
 #
 
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+if [ -f ${HOME}/.git_completion ]; then
+    source ${HOME}/.git_completion
+fi
+
 _normal_txt=0
 _bold_txt=1
 _blue=4
@@ -31,7 +37,7 @@ _user="\[\e[${_normal_txt};3${_blue}m\]\u\[\e[0m\]"
 _host="\[\e[${_normal_txt};3${_blue}m\]\h\[\e[0m\]"
 _shell_level="[$SHLVL]"
 _wd="\[\e[${_bold_txt};3${_blue}m\]\w\[\e[0m\]"
-_eop="\$\n"
+_eop="\n\$ "
 
 
 case `tput colors` in
