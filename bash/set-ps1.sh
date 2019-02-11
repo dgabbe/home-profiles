@@ -23,6 +23,12 @@
 #   - https://invisible-island.net/ncurses/ncurses.faq.html#xterm_256color
 #
 
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+if [ -f ${HOME}/.git_completion ]; then
+    source ${HOME}/.git_completion
+fi
+
 _normal_txt=0
 _bold_txt=1
 _blue=4
