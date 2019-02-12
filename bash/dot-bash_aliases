@@ -10,6 +10,9 @@ do
   al=$(echo "$a" | tr [:upper:] [:lower:])
   if [[ -e "/Applications/${a}.app" ]]; then alias ${al}="open -a /Applications/${a}.app"; fi
 done
+unset mac_apps
+unset a
+unset al
 
 alias gimp="/Applications/GIMP-2.10.app/Contents/MacOS/gimp" # for command line
 
