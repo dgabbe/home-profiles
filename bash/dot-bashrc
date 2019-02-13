@@ -5,7 +5,9 @@
 # for examples
 #
 
+#
 # If not running interactively, don't do anything
+#
 [ -z "$PS1" ] && return
 
 #
@@ -42,6 +44,7 @@ export LC_COLLATE='en_US.UTF-8'
 #
 set -o emacs
 
+## !! There is bash_completion 2 for bash 4+ which should be added here ##
 # bash-completion bug - https://github.com/scop/bash-completion/issues/44
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   set +o nounset
@@ -62,7 +65,6 @@ export HISTFILESIZE=2000
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 #
-
 if [ -f ${HOME}/.bash_aliases ]; then
     source ${HOME}/.bash_aliases
 fi
