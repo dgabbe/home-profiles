@@ -39,8 +39,6 @@ _shell_level="[$SHLVL]"
 _wd="\[\e[${_bold_txt};3${_blue}m\]\w\[\e[0m\]"
 _eop="\n\$ "
 
-
-
 case `tput colors` in
   16)
       ;&

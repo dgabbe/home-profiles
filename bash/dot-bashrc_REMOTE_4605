@@ -33,22 +33,25 @@ unset my_machine
 #
 
 shopt -s cdspell
-# Update the values of LINES and COLUMNS after each command
-shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
 
-# if [[${BASH_VERSINFO} = "5"]]
+# Update the values of LINES and COLUMNS after each command
+shopt -s checkwinsize
+
+# if [[${BASH_VERSINFO[0]} = "5"]]
 # then
 #   shopt -s dirspell
 # fi
 
 set -o emacs
+
 shopt -s histappend # Append to the history file, don't overwrite it
 export HISTCONTROL='ignoredups:ignorespace' # don't put duplicate lines in the history.
 export HISTFILESIZE=2000
-shopt -s histreedit # If you bork a ! in bash, this lets you edit the line.
 export HISTSIZE=1000
+
 # opt out Homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
+
 #
 # Required to make MacTex compatible w/older versions of Ruby.
 # Deprecated in newer versions of Ruby and no longer a problem.
@@ -58,7 +61,11 @@ export LC_MESSAGES='en_US.UTF-8'
 export LC_CTYPE='en_US.UTF-8'
 export LC_COLLATE='en_US.UTF-8'
 
-shopt -s nocaseglob # Case-insensitive wildcard matching.
+#
+# Set options using set or shopt or export
+#
+set -o emacs
+
 ## !! There is bash_completion 2 for bash 4+ which should be added here ##
 ## Also look at Ned's https://github.com/nedbat/dot/blob/master/.bashrc, line 252
 ## if [[ $BASH_VERSINFO -ge 4 ]]; then ##
@@ -69,6 +76,14 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 else
   set -o nounset
 fi
+
+shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
+shopt -s histappend # Append to the history file, don't overwrite it
+export HISTCONTROL='ignoredups:ignorespace' # don't put duplicate lines in the history.
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+shopt -s histreedit # If you bork a ! in bash, this lets you edit the line.
+shopt -s nocaseglob # Case-insensitive wildcard matching.
 
 #
 # Alias definitions.
