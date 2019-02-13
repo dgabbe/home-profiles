@@ -24,6 +24,7 @@ my_machine=${HOME}/.${HOSTNAME%.local}_${USER}_profile
 if [ -e "${my_machine}" ]; then
   source ${my_machine}
 fi
+unset my_machine
 
 #
 # opt out Homebrew analytics
@@ -45,6 +46,8 @@ export LC_COLLATE='en_US.UTF-8'
 set -o emacs
 
 ## !! There is bash_completion 2 for bash 4+ which should be added here ##
+## Also look at Ned's https://github.com/nedbat/dot/blob/master/.bashrc, line 252
+## if [[ $BASH_VERSINFO -ge 4 ]]; then ##
 # bash-completion bug - https://github.com/scop/bash-completion/issues/44
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   set +o nounset
@@ -58,6 +61,8 @@ shopt -s histappend # Append to the history file, don't overwrite it
 export HISTCONTROL='ignoredups:ignorespace' # don't put duplicate lines in the history.
 export HISTSIZE=1000
 export HISTFILESIZE=2000
+shopt -s histreedit # If you bork a ! in bash, this lets you edit the line.
+shopt -s nocaseglob # Case-insensitive wildcard matching.
 
 #
 # Alias definitions.
