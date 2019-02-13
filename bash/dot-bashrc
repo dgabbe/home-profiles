@@ -59,6 +59,7 @@ export LC_CTYPE='en_US.UTF-8'
 export LC_COLLATE='en_US.UTF-8'
 
 shopt -s nocaseglob # Case-insensitive wildcard matching.
+export PYTHONDONTWRITEBYTECODE=1 # No .pyc files
 ## !! There is bash_completion 2 for bash 4+ which should be added here ##
 ## Also look at Ned's https://github.com/nedbat/dot/blob/master/.bashrc, line 252
 ## if [[ $BASH_VERSINFO -ge 4 ]]; then ##
