@@ -1,8 +1,8 @@
 scripts = [
-  [".bash_aliases", "dot-bash_aliases"],
-  [".bash_logout", "dot-bash_logout"],
-  [".bash_profile", "dot-bash_profile"],
-  [".bashrc", "dot-bashrc"],
-  [".git-completion", "git-completion.bash"],
-  [".profile", "dot-profile"]
+    [".bash_aliases", "bash_aliases.sh"],
+    [".bash_logout", "bash_logout.sh"],
+    [".bash_profile", "bash_profile.sh"],
+    [".bashrc", "bashrc.sh"],
+    [".git-completion", "git-completion.bash"],
+    [".profile", "profile.sh"]
 ]
