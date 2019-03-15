@@ -4,27 +4,30 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 #
+# The bash coding style is inconsistent because code snippets from various versions of bash
+# and authors are pulled together to create this file.
+#
 
 #
 # If not running interactively, don't do anything
 #
-[ -z "$PS1" ] && return
+[[ -z "$PS1" ]] && return
 
 #
 # set PATH so it includes user's private bin if it exists
 #
-if [ -d "${HOME}/bin" ]
+if [[ -d "${HOME}/bin" ]]
 then
     PATH="${HOME}/bin:${PATH}"
 fi
 
 #
 # Set CDPATH & machine specific environment variables and aliases if present.
-# Somewhere between bash 4 -> 5 and MacOS 10.11 -> 10.13 HOSTNAME%.local changed
-# to HOSTNAME%.home
+# Somewhere between bash 4 -> 5 and MacOS 10.11 -> 10.13 the value of $HOSTNAME
+# changed. Switched to hostname command for better reliability.
 #
-my_profile=${HOME}/.${HOSTNAME%.home}_${USER}_profile
-if [ -e "${my_profile}" ]
+my_profile=${HOME}/.`hostname -s`_${USER}_profile
+if [[ -e "${my_profile}" ]]
 then
   source ${my_profile}
 fi
@@ -35,13 +38,11 @@ unset my_machine
 #
 
 shopt -s cdspell
-# Update the values of LINES and COLUMNS after each command
 shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
 
  if [[ "${BASH_VERSINFO}" = "5" ]]
  then
    shopt -s dirspell
-   echo "   dirspell set!"
  fi
 
 set -o emacs
@@ -67,7 +68,7 @@ export PYTHONDONTWRITEBYTECODE=1 # No .pyc files
 ## Also look at Ned's https://github.com/nedbat/dot/blob/master/.bashrc, line 252
 ## if [[ $BASH_VERSINFO -ge 4 ]]; then ##
 # bash-completion bug - https://github.com/scop/bash-completion/issues/44
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
   set +o nounset
   source $(brew --prefix)/etc/bash_completion
 else
@@ -80,21 +81,21 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 #
-if [ -f ${HOME}/.bash_aliases ]; then
+if [[ -f ${HOME}/.bash_aliases ]]; then
     source ${HOME}/.bash_aliases
 fi
 
 #
 # Set prompt, window title, git status
 #
-if [ -f ${HOME}/.set-ps1 ]; then
+if [[ -f ${HOME}/.set-ps1 ]]; then
     source ${HOME}/.set-ps1
 fi
 
 #
 # load rvm
 #
-if [ -s "${HOME}/.rvm/scripts/rvm" ]; then
+if [[ -s "${HOME}/.rvm/scripts/rvm" ]]; then
   PATH=${PATH}:${HOME}/.rvm/bin # Add RVM to PATH for scripting
   source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
   # load git prompt
@@ -109,4 +110,4 @@ fi
 # Stuff from Bosco's file, but not supported on OS X
 #
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
