@@ -4,46 +4,55 @@
 #
 # Assume script is run from git local working directory.
 #
-# Repo file names are with the leading "."
+# File naming convention is ~/.file-name maps to repo/file-name.sh
 #
 # Assume if a link is found, the environment is already setup, but not
 # necessarily by this repo.
 #
 
+from __future__ import print_function
 import getpass
-import os
+from json import load
+from os import environ, rename, symlink, path
+from os.path import dirname, isfile, islink, abspath, join
 import platform
-import string
-import sys
+from sys import exit
 
-home = os.environ["HOME"]
-repo = os.path.dirname(os.path.abspath(__file__))
+home = environ["HOME"]
+repo = dirname(abspath(__file__))
 
-scripts = [
-    [".bash_aliases", "dot-bash_aliases"],
-    [".bash_logout", "dot-bash_logout"],
-    [".bash_profile", "dot-bash_profile"],
-    [".bashrc", "dot-bashrc"],
-    [".git-completion", "git-completion.bash"],
-    [".profile", "dot-profile"],
-    [".set-ps1", "set-ps1.sh"]
-]
+# os.path.dirname(os.path.abspath(sys.argv[0])) add to call from directory script lives in!
+install_files = abspath("install-files.json")
+if isfile(install_files):
+    try:
+        file = open(install_files, "r")
+        scripts = load(file)
+    except FileNotFoundError as e:
+        print("  {} was not found. Cannot proceed :-(".format(e.name))
+        exit(1)
+    finally:
+        file.close()
+
 
 # Append machine-user specific file if found
-my_machine = str.split(platform.uname()[1], ".local")[0] \
-             + "_" + getpass.getuser() + "_profile"
-if os.path.isfile(os.path.join(repo, my_machine)):
-    scripts.append([str("." + my_machine), my_machine])
+my_profile = (
+    str.split(platform.uname()[1], ".home")[0]
+    + "_"
+    + getpass.getuser()
+    + "_profile"
+)
+if isfile(join(repo, str(my_profile + ".sh"))):
+    scripts.append([str("." + my_profile), str(my_profile + ".sh")])
 
 for s in scripts:
-    f = os.path.join(home, s[0])
+    f = join(home, s[0])
 
-    if os.path.isfile(f) and not os.path.islink(f):
-        os.rename(f, f + ".org")
-        print("\n    Moved", f, 'to', f, '.org')
+    if isfile(f) and not islink(f):
+        rename(f, f + ".org")
+        print("\n    Moved", f, "to", f, ".org")
 
-    if os.path.islink(f):
-        print('\n    ', f, "is a sym link. No changes to make.")
+    if islink(f):
+        print("\n    ", f, "is a sym link. No changes to make.")
     else:
-        os.symlink(os.path.join(repo, s[1]), f)
-        print("\n    ", f, "->", os.path.realpath(f))
+        symlink(path.join(repo, s[1]), f)
+        print("\n    ", f, "->", path.realpath(f))

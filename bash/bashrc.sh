@@ -20,11 +20,13 @@ fi
 
 #
 # Set CDPATH & machine specific environment variables and aliases if present.
+# Somewhere between bash 4 -> 5 and MacOS 10.11 -> 10.13 HOSTNAME%.local changed
+# to HOSTNAME%.home
 #
-my_machine=${HOME}/.${HOSTNAME%.local}_${USER}_profile
-if [ -e "${my_machine}" ]
+my_profile=${HOME}/.${HOSTNAME%.home}_${USER}_profile
+if [ -e "${my_profile}" ]
 then
-  source ${my_machine}
+  source ${my_profile}
 fi
 unset my_machine
 
@@ -36,10 +38,11 @@ shopt -s cdspell
 # Update the values of LINES and COLUMNS after each command
 shopt -s checkwinsize # Update the values of LINES and COLUMNS after each command
 
-# if [[${BASH_VERSINFO} = "5"]]
-# then
-#   shopt -s dirspell
-# fi
+ if [[ "${BASH_VERSINFO}" = "5" ]]
+ then
+   shopt -s dirspell
+   echo "   dirspell set!"
+ fi
 
 set -o emacs
 shopt -s histappend # Append to the history file, don't overwrite it
