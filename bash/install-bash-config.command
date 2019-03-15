@@ -15,13 +15,13 @@ import getpass
 from json import load
 from os import environ, rename, symlink, path
 from os.path import dirname, isfile, islink, abspath, join
-import platform
+from socket import gethostname
 from sys import exit
 
 home = environ["HOME"]
 repo = dirname(abspath(__file__))
 
-# os.path.dirname(os.path.abspath(sys.argv[0])) add to call from directory script lives in!
+# os.path.dirname(os.path.abspath(__file__)) needed to unambigiously reference json file?
 install_files = abspath("install-files.json")
 if isfile(install_files):
     try:
@@ -34,13 +34,8 @@ if isfile(install_files):
         file.close()
 
 
-# Append machine-user specific file if found
-my_profile = (
-    str.split(platform.uname()[1], ".home")[0]
-    + "_"
-    + getpass.getuser()
-    + "_profile"
-)
+# Append host-user specific file if found
+my_profile = str.split(gethostname(), ".")[0] + "_" + getpass.getuser() + "_profile"
 if isfile(join(repo, str(my_profile + ".sh"))):
     scripts.append([str("." + my_profile), str(my_profile + ".sh")])
 
