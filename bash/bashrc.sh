@@ -93,6 +93,14 @@ if [[ -f ${HOME}/.set-ps1 ]]; then
 fi
 
 #
+# Add pip3 command completion if pip3 installed
+#
+if [[ `which pip3` != "" ]]
+then
+  eval "`pip3 completion --bash`"
+fi
+
+#
 # load rvm
 #
 if [[ -s "${HOME}/.rvm/scripts/rvm" ]]; then
