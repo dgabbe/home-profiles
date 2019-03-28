@@ -26,6 +26,12 @@ t.t
 *.bbprojectd
 
 #
+# Eclipse
+#
+.settings
+.project
+
+#
 # macOS / OS X files
 #
 ._*
