@@ -19,9 +19,15 @@
   conflictstyle = diff3
   tool = diffmerge
 [diff]
-  tool = diffmerge
+	tool = bcomp
 [difftool "diffmerge"]
   cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
   cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
   trustExitCode = true
+[difftool "bc3"]
+	trustExitCode = true
+[difftool "bc"]
+	trustExitCode = true
+[difftool "bcomp"]
+	trustExitCode = true
